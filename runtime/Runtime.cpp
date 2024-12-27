@@ -14,6 +14,9 @@ void RuntimeFramework::Initial() {
     game_objects.push_back(clyde);
     game_objects.push_back(inky);
     game_objects.push_back(pinky);
+    for(int i=0;i<point_manager->GetPointListSize();i++) {
+        game_objects.push_back(point_manager->GetPointList()[i]);
+    }
     
 
 }
