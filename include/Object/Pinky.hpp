@@ -9,6 +9,8 @@
 #include "State/MovementState.hpp"
 #include "State/ScatterState.hpp"
 #include "string"
+#include<iostream>
+#include <memory>
 
 constexpr int PINKY_INITIAL_POS_X = 11;
 constexpr int PINKY_INITIAL_POS_Y = 0;
