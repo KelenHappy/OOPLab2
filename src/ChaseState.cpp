@@ -81,13 +81,14 @@ Object::GamePosition ChaseState::Inky(
     }
     pos.x = std::max(0, std::min(11, pos.x));
     pos.y = std::max(0, std::min(11, pos.y));
+    return pos;
 }
 
 Object::GamePosition ChaseState::Pinky(
     Object::GamePosition pos,
     Object::GamePosition playerPos
 ) {
-    if (playerPos.x != pos.x) {
+    if (playerPos.x+4 != pos.x) {
         pos.x += (playerPos.x+4 - pos.x) / std::abs(playerPos.x+4 - pos.x);
     }
     if (playerPos.y != pos.y) {
@@ -96,5 +97,6 @@ Object::GamePosition ChaseState::Pinky(
     }
     pos.x = std::max(0, std::min(11, pos.x));
     pos.y = std::max(0, std::min(11, pos.y));
+    return pos;
 }
 }  // namespace State
