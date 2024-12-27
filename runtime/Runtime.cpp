@@ -17,9 +17,6 @@ void RuntimeFramework::Initial() {
 }
 
 void RuntimeFramework::Running() {
-<<<<<<< Updated upstream
-    //Blinky->Move(player->GetPosition());
-=======
     char direction;
     std::cin >> direction;
     player->Move(direction);
@@ -31,7 +28,6 @@ void RuntimeFramework::Running() {
     || player->GetPosition() == pinky->GetPosition()) {  // player point
         state = RuntimeState::END;  
     }
->>>>>>> Stashed changes
 }
 
 void RuntimeFramework::Render() { //using Draw()
