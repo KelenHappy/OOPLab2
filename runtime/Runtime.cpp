@@ -15,7 +15,6 @@ void RuntimeFramework::Initial() {
     game_objects.push_back(inky);
     game_objects.push_back(pinky);
 
-    
 }
 
 void RuntimeFramework::Running() {
@@ -34,9 +33,10 @@ void RuntimeFramework::Running() {
 
 void RuntimeFramework::Render() { //using Draw()
     Map::Draw(game_objects);
+    state = RuntimeState::RUNNING;
 }
 
 void RuntimeFramework::End() {
-    
+    state = RuntimeState::END;
 }
 };  // namespace Util
