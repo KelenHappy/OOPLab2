@@ -5,8 +5,7 @@ DotManager::DotManager(
     std::shared_ptr<Object::Player>   player,
     std::vector<Object::GamePosition> pos
 )
-    : player(player),
-      points_pos(pos) {
+    : player(player),points_pos(pos) {
     for (auto& pos_elem : points_pos) {
         points.push_back(std::make_shared<Object::Dot>(pos_elem));
     }
