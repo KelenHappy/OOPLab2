@@ -28,7 +28,7 @@ void Pinky::SetState(Object::MonsterState s) {
 }
 
 void Pinky::Move(const Object::GamePosition& playerPos) {
-    this->pos = state->Behavior(GhostType::INKY, pos, playerPos);
+    this->pos = state->Behavior(GhostType::PINKY, pos, playerPos);
     /*switch (state) {
     case Object::MonsterState::Chase:
         if (playerPos.x != pos.x) {
