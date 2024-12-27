@@ -27,13 +27,12 @@ void RuntimeFramework::Running() {
     pinky->Move(player->GetPosition());
     if (player->GetPosition() == blinky->GetPosition() || player->GetPosition() == clyde->GetPosition() || player->GetPosition() == inky->GetPosition()
     || player->GetPosition() == pinky->GetPosition()) {  // player point
-        state = RuntimeState::END;  
+        RuntimeFramework::End();  
     }
 }
 
 void RuntimeFramework::Render() { //using Draw()
     Map::Draw(game_objects);
-    state = RuntimeState::RUNNING;
 }
 
 void RuntimeFramework::End() {
