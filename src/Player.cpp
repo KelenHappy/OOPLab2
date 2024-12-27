@@ -12,7 +12,7 @@ Object::GamePosition Player::GetPosition() const {
 };
 
 void Player::Move(char direction) {
-    std::cin >> direction;
+    
     switch (direction) {
             case 'w':
             case 'W':

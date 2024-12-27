@@ -9,14 +9,36 @@
 namespace Util {
 
 void RuntimeFramework::Initial() {
+    game_objects.push_back(player);
+    game_objects.push_back(blinky);
+    game_objects.push_back(clyde);
+    game_objects.push_back(inky);
+    game_objects.push_back(pinky);
 }
 
 void RuntimeFramework::Running() {
+<<<<<<< Updated upstream
     //Blinky->Move(player->GetPosition());
+=======
+    char direction;
+    std::cin >> direction;
+    player->Move(direction);
+    blinky->Move(player->GetPosition()); 
+    clyde->Move(player->GetPosition());
+    inky->Move(player->GetPosition());
+    pinky->Move(player->GetPosition());
+    if (player->GetPosition() == blinky->GetPosition() || player->GetPosition() == clyde->GetPosition() || player->GetPosition() == inky->GetPosition()
+    || player->GetPosition() == pinky->GetPosition()) {  // player point
+        state = RuntimeState::END;  
+    }
+>>>>>>> Stashed changes
 }
 
-void RuntimeFramework::Render() {
+void RuntimeFramework::Render() { //using Draw()
+    
 }
 
-void RuntimeFramework::End() {}
+void RuntimeFramework::End() {
+    
+}
 };  // namespace Util
