@@ -7,7 +7,7 @@
 #include "State/ChaseState.hpp"
 #include "State/MovementState.hpp"
 #include "State/ScatterState.hpp"
-
+#include <memory>
 constexpr int INKY_INITIAL_POS_X = 0;
 constexpr int INKY_INITIAL_POS_Y = 11;
 

@@ -6,7 +6,7 @@
 #include "Interface/MonsterMovable.hpp"
 #include "State/ChaseState.hpp"
 #include "State/MovementState.hpp"
-
+#include <memory>
 constexpr int CLYDE_INITIAL_POS_X = 11;
 constexpr int CLYDE_INITIAL_POS_Y = 11;
 

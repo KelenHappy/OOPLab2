@@ -15,8 +15,25 @@ Object::GamePosition Blinky::GetPosition() const {
 };
 
 void Blinky::SetState(Object::MonsterState s) {
+    switch (s) {
+    case Object::MonsterState::Chase:
+        this->state = std::make_shared<State::ChaseState>();
+        break;
+    case Object::MonsterState::Scatter:
+        this->state = std::make_shared<State::ScatterState>();
+        break;
+    }
 
 }
 void Blinky::Move(const Object::GamePosition& playerPos) {
+    switch (state) {
+    case Object::MonsterState::Chase:
+
+        break;
+    case Object::MonsterState::Scatter:
+        pos.x =0;
+        pos.y = 0;
+        break;
+    }
 };
 }  // namespace Object

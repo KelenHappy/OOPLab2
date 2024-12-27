@@ -20,8 +20,7 @@ public:
 
     Object::GamePosition pos = {BLINKY_INITIAL_POS_X, BLINKY_INITIAL_POS_Y};
 
-    std::shared_ptr<State::MovementState> state =
-        std::make_shared<State::ChaseState>();
+    std::shared_ptr<State::MovementState> state =std::make_shared<State::ChaseState>();
 
 public:
     explicit Blinky();
