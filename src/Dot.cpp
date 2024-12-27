@@ -7,7 +7,7 @@ Dot::Dot(Object::GamePosition pos)
 }
 
 uint8_t Dot::GetPoint() {
-    return  // Returns the points associated with the dot
+    return 1;// Returns the points associated with the dot
 }
 
 std::string Dot::GetName() const {
