@@ -1,6 +1,7 @@
 #include "Object/Player.hpp"
 #include "Object/GameObject.hpp"
 #include <iostream>
+
 namespace Object {
 
 std::string Player::GetName() const {
@@ -38,13 +39,15 @@ void Player::Move(char direction) {
                 break;  // 不處理其他字符
     }
      if(IsOutRange()){
-        pos.x = 12;
-        pos.y = 12;
+        if(pos.x > 12) pos.x = 11;
+        if(pos.x < 0) pos.x = 0;
+        if(pos.y > 12) pos.y = 11;
+        if(pos.y < 0) pos.y = 0;
     }
 }
 
 bool Player::IsOutRange() {
-    if(pos.x > 12 || pos.y > 12) return true;
+    if(pos.x > 12 || pos.y > 12 || pos.x < 0 || pos.y < 0) return true;
     else return false;
 }
 
