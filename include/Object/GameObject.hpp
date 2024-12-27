@@ -8,6 +8,7 @@ struct GamePosition {
     int x;
     int y;
     inline bool operator==(GamePosition pos) const {
+        return x==pos.x&&y==pos.y;
     }
 };
 
