@@ -14,6 +14,7 @@ void RuntimeFramework::Initial() {
     game_objects.push_back(clyde);
     game_objects.push_back(inky);
     game_objects.push_back(pinky);
+    
 
 }
 
