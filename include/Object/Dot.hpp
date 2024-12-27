@@ -5,8 +5,8 @@
 #include "Interface/GetPointer.hpp"
 
 namespace Object {
-class Dot : public Object::GetPointer, public Object::GameObject {
-    Object::GamePosition position;
+class Dot : public Object::GetPointer,
+            public Object::GameObject {Object::GamePosition position;
 
 public:
     Dot(Object::GamePosition pos);
