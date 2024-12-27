@@ -3,11 +3,9 @@
 namespace Object {
 
 Dot::Dot(Object::GamePosition pos)
-    : position(pos) {  // Initialize position and set points to 10 (you can change this value)
-    this->position.x = pos.x;
-    this->position.x = pos.y;
+     {  // Initialize position and set points to 10 (you can change this value)
+    this->pos=pos;
 }
-
 uint8_t Dot::GetPoint() {
     return 10;// Returns the points associated with the dot
 }
@@ -17,7 +15,7 @@ std::string Dot::GetName() const {
 }
 
 Object::GamePosition Dot::GetPosition() const {
-    return position;  // Return the dot's position
+    return pos;  // Return the dot's position
 }
 
 }  // namespace Object

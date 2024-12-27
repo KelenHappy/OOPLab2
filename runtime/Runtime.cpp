@@ -10,16 +10,15 @@ namespace Util {
 
 
 void RuntimeFramework::Initial() {
-    std::vector<Object::GamePosition> initial_points = {
-        {2, 8}, {9, 9}, {8, 3}, {5, 7}
-    };
     game_objects.push_back(player);
     game_objects.push_back(blinky);
     game_objects.push_back(clyde);
     game_objects.push_back(inky);
     game_objects.push_back(pinky);
-    auto points = point_manager->GetPointList();
-    game_objects.insert(game_objects.end(), points.begin(), points.end());
+    for(int i = 0; i < point_manager->GetPointListSize(); i++) {
+        game_objects.push_back(point_manager->GetPointList()[i]);
+    }
+
     
 
 }
@@ -28,8 +27,6 @@ void RuntimeFramework::Running() {
     char direction;
     std::cin >> direction;
     player->Move(direction);
-
-
     blinky->Move(player->GetPosition()); 
     clyde->Move(player->GetPosition());
     inky->Move(player->GetPosition());

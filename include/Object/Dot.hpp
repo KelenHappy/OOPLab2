@@ -9,11 +9,11 @@ class Dot : public Object::GetPointer,
             public Object::GameObject {Object::GamePosition position;
 
 public:
+    Object::GamePosition pos={0,0};
     Dot(Object::GamePosition pos);
+    uint8_t GetPoint() override;
 
     ~Dot() = default;
-
-    uint8_t GetPoint() override;
 
     std::string GetName() const override;
 

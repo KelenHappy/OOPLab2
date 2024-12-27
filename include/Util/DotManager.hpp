@@ -12,14 +12,12 @@
 
 namespace Util {
 class DotManager {
-    std::vector<Object::GamePosition>         points_pos;
     std::vector<std::shared_ptr<Object::Dot>> points;
     std::shared_ptr<Object::Player>           player;
 
 public:
     DotManager(
-        std::shared_ptr<Object::Player>   player,
-        std::vector<Object::GamePosition> pos
+        std::shared_ptr<Object::Player>   player
     );
 
     ~DotManager();

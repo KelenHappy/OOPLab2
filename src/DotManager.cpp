@@ -1,14 +1,18 @@
 #include "Util/DotManager.hpp"
+#include  "Object/Dot.hpp"
 
 namespace Util {
-DotManager::DotManager(
-    std::shared_ptr<Object::Player>   player,
-    std::vector<Object::GamePosition> pos
-)
-    : player(player),points_pos(pos) {
-    for (auto& pos_elem : points_pos) {
-        points.push_back(std::make_shared<Object::Dot>(pos_elem));
-    }
+DotManager::DotManager(std::shared_ptr<Object::Player>   player) {
+    this->player = player;
+
+    std::shared_ptr<Object::Dot> DT1 = std::make_shared<Object::Dot>(Object::GamePosition{2, 8});
+    std::shared_ptr<Object::Dot> DT2 = std::make_shared<Object::Dot>(Object::GamePosition{9, 9});
+    std::shared_ptr<Object::Dot> DT3 = std::make_shared<Object::Dot>(Object::GamePosition{8, 3});
+    std::shared_ptr<Object::Dot> DT4 = std::make_shared<Object::Dot>(Object::GamePosition{5, 7});
+    points.push_back(DT1);
+    points.push_back(DT2);
+    points.push_back(DT3);
+    points.push_back(DT4);
 };
 
 DotManager::~DotManager() = default;
