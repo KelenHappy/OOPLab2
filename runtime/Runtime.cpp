@@ -35,6 +35,7 @@ void RuntimeFramework::Running() {
     if (player->GetPosition() == blinky->GetPosition() || player->GetPosition() == clyde->GetPosition() || player->GetPosition() == inky->GetPosition()
     || player->GetPosition() == pinky->GetPosition()) {  // player point
         Map::Draw(game_objects);
+        std::cout << "You lose." << std::endl;
         RuntimeFramework::End();  
     }
    /* if(point_manager->IsOverlapping()){
