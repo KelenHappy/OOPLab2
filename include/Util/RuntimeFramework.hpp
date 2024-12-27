@@ -24,7 +24,7 @@ class RuntimeFramework {
     std::shared_ptr<Object::Player> player = std::make_shared<Object::Player>();
 
     std::vector<std::shared_ptr<Object::GameObject>> game_objects;
-    std::shared_ptr<Util::DotManager> point_manager;
+    std::shared_ptr<Util::DotManager> point_manager=std::make_shared<Util::DotManager>(player);;
 
 public:
     RuntimeFramework() = default;
