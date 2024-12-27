@@ -14,9 +14,8 @@ void RuntimeFramework::Initial() {
     game_objects.push_back(clyde);
     game_objects.push_back(inky);
     game_objects.push_back(pinky);
-    for(int i=0;i<point_manager->GetPointListSize();i++) {
-        game_objects.push_back(point_manager->GetPointList()[i]);
-    }
+    auto points = point_manager->GetPointList(); 
+    game_objects.insert(game_objects.end(), points.begin(), points.end());
     
 
 }
@@ -32,6 +31,9 @@ void RuntimeFramework::Running() {
     if (player->GetPosition() == blinky->GetPosition() || player->GetPosition() == clyde->GetPosition() || player->GetPosition() == inky->GetPosition()
     || player->GetPosition() == pinky->GetPosition()) {  // player point
         RuntimeFramework::End();  
+    }
+    if(point_manager->IsOverlapping()){
+        RuntimeFramework::End();
     }
 }
 
