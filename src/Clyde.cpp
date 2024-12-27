@@ -30,7 +30,8 @@ void Clyde::SetState(Object::MonsterState s) {
 }
 
 void Clyde::Move(const Object::GamePosition& playerPos) {
-    switch (state) {
+    this->pos = state->Behavior(GhostType::CLYDE, pos, playerPos);
+    /*switch (this->state) {
     case Object::MonsterState::Chase:
         if(abs(playerPos.x-pos.x)<5&&abs(playerPos.y-pos.y)<5) {
             if (playerPos.x != pos.x) {
@@ -53,6 +54,6 @@ void Clyde::Move(const Object::GamePosition& playerPos) {
         break;
     default:
         break;
-    }
+    }*/
 }
 }  // namespace Object

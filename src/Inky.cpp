@@ -27,6 +27,7 @@ void Inky::SetState(Object::MonsterState s) {
 }
 
 void Inky::Move(const Object::GamePosition& playerPos) {
+    this->pos = state->Behavior(GhostType::INKY, pos, playerPos);/*
     switch (state) {
     case Object::MonsterState::Chase:
         if (playerPos.x != pos.x) {
@@ -45,6 +46,6 @@ void Inky::Move(const Object::GamePosition& playerPos) {
         break;
     default:
         break;
-    }
+    }*/
 }
 }  // namespace Object

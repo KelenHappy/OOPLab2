@@ -28,7 +28,8 @@ void Pinky::SetState(Object::MonsterState s) {
 }
 
 void Pinky::Move(const Object::GamePosition& playerPos) {
-    switch (state) {
+    this->pos = state->Behavior(GhostType::INKY, pos, playerPos);
+    /*switch (state) {
     case Object::MonsterState::Chase:
         if (playerPos.x != pos.x) {
             pos.x += (playerPos.x+4 - pos.x) / std::abs(playerPos.x+4 - pos.x);
@@ -46,6 +47,6 @@ void Pinky::Move(const Object::GamePosition& playerPos) {
         break;
     default:
         break;
-    }
+    }*/
 }
 }  // namespace Object
