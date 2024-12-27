@@ -11,7 +11,7 @@ std::string Blinky::GetName() const {
 };
 
 Object::GamePosition Blinky::GetPosition() const {
-    return Object::GamePosition{};
+    return pos;
 };
 
 void Blinky::SetState(Object::MonsterState s) {
@@ -28,7 +28,16 @@ void Blinky::SetState(Object::MonsterState s) {
 void Blinky::Move(const Object::GamePosition& playerPos) {
     switch (state) {
     case Object::MonsterState::Chase:
+        if (playerPos.x != pos.x) {
+            pos.x += (playerPos.x - pos.x) / std::abs(playerPos.x - pos.x);
+        }
+        if (playerPos.y != pos.y) {
+            pos.y += (playerPos.y - pos.y) / std::abs(playerPos.y - pos.y);
 
+        }
+
+        pos.x = std::max(0, std::min(11, pos.x));
+        pos.y = std::max(0, std::min(11, pos.y));
         break;
     case Object::MonsterState::Scatter:
         pos.x =0;

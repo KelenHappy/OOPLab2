@@ -12,6 +12,7 @@ void RuntimeFramework::Initial() {
 }
 
 void RuntimeFramework::Running() {
+    //Blinky->Move(player->GetPosition());
 }
 
 void RuntimeFramework::Render() {
