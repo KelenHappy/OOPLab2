@@ -6,10 +6,12 @@
 namespace Object {
 
 Clyde::Clyde() {
+    this->pos={CLYDE_INITIAL_POS_X,CLYDE_INITIAL_POS_Y};
+    this->state=std::make_shared<State::ChaseState>();
 };
 
 std::string Clyde::GetName() const {
-    return "Clyde";
+    return  name;
 };
 
 Object::GamePosition Clyde::GetPosition() const {
@@ -46,8 +48,10 @@ void Clyde::Move(const Object::GamePosition& playerPos) {
         pos.y = std::max(0, std::min(11, pos.y));
         break;
     case Object::MonsterState::Scatter:
-        pos.x =0;
+        pos.x =11;
         pos.y = 0;
+        break;
+    default:
         break;
     }
 }

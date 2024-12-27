@@ -4,10 +4,13 @@
 
 namespace Object {
 
-Blinky::Blinky() {}
+Blinky::Blinky() {
+    this->pos = {BLINKY_INITIAL_POS_X, BLINKY_INITIAL_POS_Y};
+    this->state = std::make_shared<State::ChaseState>();
+}
 
 std::string Blinky::GetName() const {
-    return "Blinky";
+    return name;
 };
 
 Object::GamePosition Blinky::GetPosition() const {
@@ -42,6 +45,8 @@ void Blinky::Move(const Object::GamePosition& playerPos) {
     case Object::MonsterState::Scatter:
         pos.x =0;
         pos.y = 0;
+        break;
+    default:
         break;
     }
 };
