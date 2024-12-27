@@ -5,14 +5,20 @@ namespace Util {
 DotManager::DotManager(std::shared_ptr<Object::Player>   player) {
     this->player = player;
 
-    std::shared_ptr<Object::Dot> DT1 = std::make_shared<Object::Dot>(Object::GamePosition{2, 8});
-    std::shared_ptr<Object::Dot> DT2 = std::make_shared<Object::Dot>(Object::GamePosition{9, 9});
-    std::shared_ptr<Object::Dot> DT3 = std::make_shared<Object::Dot>(Object::GamePosition{8, 3});
-    std::shared_ptr<Object::Dot> DT4 = std::make_shared<Object::Dot>(Object::GamePosition{5, 7});
+    std::shared_ptr<Object::Dot> DT1 = std::make_shared<Object::Dot>(Object::GamePosition{2, 8},"d");
+    std::shared_ptr<Object::Dot> DT2 = std::make_shared<Object::Dot>(Object::GamePosition{9, 9},"d");
+    std::shared_ptr<Object::Dot> DT3 = std::make_shared<Object::Dot>(Object::GamePosition{8, 3},"d");
+    std::shared_ptr<Object::Dot> DT4 = std::make_shared<Object::Dot>(Object::GamePosition{5, 7},"d");
+    std::shared_ptr<Object::Dot> DT5 = std::make_shared<Object::Dot>(Object::GamePosition{3, 7},"X");
+    std::shared_ptr<Object::Dot> DT6 = std::make_shared<Object::Dot>(Object::GamePosition{2, 7},"X");
+    std::shared_ptr<Object::Dot> DT7 = std::make_shared<Object::Dot>(Object::GamePosition{1, 7},"X");
     points.push_back(DT1);
     points.push_back(DT2);
     points.push_back(DT3);
     points.push_back(DT4);
+    points.push_back(DT5);
+    points.push_back(DT6);
+    points.push_back(DT7);
 };
 
 DotManager::~DotManager() = default;

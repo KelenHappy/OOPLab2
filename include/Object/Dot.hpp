@@ -9,8 +9,9 @@ class Dot : public Object::GetPointer,
             public Object::GameObject {Object::GamePosition position;
 
 public:
+    std::string name;
     Object::GamePosition pos={0,0};
-    Dot(Object::GamePosition pos);
+    Dot(Object::GamePosition pos,std::string name);
     uint8_t GetPoint() override;
 
     ~Dot() = default;
