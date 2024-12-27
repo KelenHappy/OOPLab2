@@ -15,7 +15,6 @@ void RuntimeFramework::Initial() {
     game_objects.push_back(inky);
     game_objects.push_back(pinky);
 
-    
 }
 
 void RuntimeFramework::Running() {
@@ -28,7 +27,7 @@ void RuntimeFramework::Running() {
     pinky->Move(player->GetPosition());
     if (player->GetPosition() == blinky->GetPosition() || player->GetPosition() == clyde->GetPosition() || player->GetPosition() == inky->GetPosition()
     || player->GetPosition() == pinky->GetPosition()) {  // player point
-        state = RuntimeState::END;  
+        RuntimeFramework::End();  
     }
 }
 
@@ -37,6 +36,6 @@ void RuntimeFramework::Render() { //using Draw()
 }
 
 void RuntimeFramework::End() {
-    
+    state = RuntimeState::END;
 }
 };  // namespace Util

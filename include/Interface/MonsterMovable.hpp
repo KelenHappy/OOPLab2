@@ -4,7 +4,7 @@
 #include "Object/GameObject.hpp"
 
 namespace Object {
-
+//case MonsterState::Chase:
 enum class MonsterState {
     Chase,
     Scatter
