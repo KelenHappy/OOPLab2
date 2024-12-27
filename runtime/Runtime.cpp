@@ -18,8 +18,8 @@ void RuntimeFramework::Initial() {
     game_objects.push_back(clyde);
     game_objects.push_back(inky);
     game_objects.push_back(pinky);
-    //auto points = point_manager->GetPointList();
-    //game_objects.insert(game_objects.end(), points.begin(), points.end());
+    auto points = point_manager->GetPointList();
+    game_objects.insert(game_objects.end(), points.begin(), points.end());
     
 
 }
