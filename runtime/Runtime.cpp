@@ -37,14 +37,17 @@ void RuntimeFramework::Running() {
         std::cout << "You lose." << std::endl;
         RuntimeFramework::End();  
     }
-    /* if(point_manager->IsOverlapping()){
-         RuntimeFramework::End();
-     }*/
-
+    if (point_manager->IsOverlapping()) {
+        std::cout << "Point collected!" << std::endl;
+        game_objects.clear();
+        Initial();// 渲染更新後的場景
+    }
+    // 檢查是否所有點都被收集
     if (point_manager->GetPointListSize() == 0) {
         std::cout << "All points collected! You win!" << std::endl;
         End();
     }
+
 }
 
     void RuntimeFramework::Render() { //using Draw()
